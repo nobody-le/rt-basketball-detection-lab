@@ -63,6 +63,25 @@ env -u PYTHONPATH .venv/bin/python submission/task01/compare_flip.py
 - `rt-225-centers.json`：中心点、框、置信度和复跑命令
 - `rt-225-compare.png`：左右中心点对照图
 
+## 4. rt.mp4 第 200、250 帧回放
+
+从 `data-src/rt.mp4` 顺序解码到第 200、250 帧，按 640 输入、阈值 0.10、仅 `sports ball` 推理；检测为空时保留该帧记录。
+
+```bash
+env -u PYTHONPATH .venv/bin/python submission/task01/replay_frames.py
+```
+
+| 帧 | 时间 (s) | 检测数 | 最高分 | 框 `xyxy` | 中心 `(x, y)` |
+|---:|---:|---:|---:|---|---|
+| 200 | 3.3325 | 0 | — | — | — |
+| 250 | 4.1657 | 0 | — | — | — |
+
+人工标注对照：第 200 帧无球（空标注）；第 250 帧有球，标注框 `[129, 213, 234, 316]`，但本轮模型在 0.10 阈值下未检出，降到 0.01 仍为空。
+
+- `replay-200-250.jsonl`：逐帧记录（帧号、时间、检测列表、中心点）
+- `replay-200-250.csv`：表格版
+- `replay-200-250.png`：两帧并列截图
+
 ## 前置条件
 
 `dataset-curated/` 与 `yolo11n.pt` 被 `.gitignore` 忽略，复跑前在仓库根目录执行一次：
