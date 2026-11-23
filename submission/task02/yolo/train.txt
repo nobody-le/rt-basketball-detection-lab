@@ -1,0 +1,4 @@
+data/images/train/plos02-055.jpg
+data/images/train/rt-125.jpg
+data/images/train/rt-150.jpg
+data/images/train/rt-200.jpg

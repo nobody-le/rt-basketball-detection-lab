@@ -1,0 +1,4 @@
+names:
+  0: basketball
+path: .
+train: train.txt

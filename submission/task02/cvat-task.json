@@ -1,0 +1,37 @@
+{
+  "cvat": {
+    "version": "2.83.0",
+    "url": "http://localhost:8080"
+  },
+  "project": {
+    "id": 1,
+    "name": "task02-basketball",
+    "label": {
+      "id": 1,
+      "name": "basketball",
+      "color": "#ff3333"
+    }
+  },
+  "task": {
+    "id": 1,
+    "name": "task02-4frames",
+    "frames": [
+      { "frame": 0, "file": "plos02-055.jpg", "width": 1920, "height": 1080 },
+      { "frame": 1, "file": "rt-125.jpg", "width": 360, "height": 640 },
+      { "frame": 2, "file": "rt-150.jpg", "width": 360, "height": 640 },
+      { "frame": 3, "file": "rt-200.jpg", "width": 360, "height": 640 }
+    ]
+  },
+  "annotations": [
+    { "frame": 0, "file": "plos02-055.jpg", "type": "rectangle", "bbox_xyxy": [1072, 563, 1141, 632] },
+    { "frame": 1, "file": "rt-125.jpg", "type": "rectangle", "bbox_xyxy": [48, 303, 167, 425] },
+    { "frame": 2, "file": "rt-150.jpg", "type": "rectangle", "bbox_xyxy": [0, 247, 31, 344] },
+    { "frame": 3, "file": "rt-200.jpg", "type": "rectangle", "bbox_xyxy": null, "note": "无球，保持空标注" }
+  ],
+  "export": {
+    "format": "Ultralytics YOLO Detection 1.0",
+    "save_images": true,
+    "archive": "submission/task02/cvat-export.zip",
+    "extracted": "submission/task02/yolo"
+  }
+}

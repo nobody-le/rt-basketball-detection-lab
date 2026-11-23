@@ -1,0 +1,56 @@
+{
+  "task": "task02",
+  "format": "Ultralytics YOLO Detection 1.0",
+  "export": "submission/task02/cvat-export.zip",
+  "restored": [
+    {
+      "image": "submission/task02/yolo/images/train/rt-150.jpg",
+      "size": {
+        "width": 360,
+        "height": 640
+      },
+      "label_file": "submission/task02/yolo/labels/train/rt-150.txt",
+      "yolo_line": "0 0.043056 0.461719 0.086111 0.151562",
+      "class_id": 0,
+      "class_name": "basketball",
+      "normalized_cxcywh": [
+        0.043056,
+        0.461719,
+        0.086111,
+        0.151562
+      ],
+      "pixel_xyxy": [
+        0.0,
+        247.0,
+        31.0,
+        344.0
+      ],
+      "output_image": "submission/task02/rt-150-box.png"
+    },
+    {
+      "image": "submission/task02/yolo/images/train/plos02-055.jpg",
+      "size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "label_file": "submission/task02/yolo/labels/train/plos02-055.txt",
+      "yolo_line": "0 0.576302 0.553241 0.035937 0.063889",
+      "class_id": 0,
+      "class_name": "basketball",
+      "normalized_cxcywh": [
+        0.576302,
+        0.553241,
+        0.035937,
+        0.063889
+      ],
+      "pixel_xyxy": [
+        1072.0,
+        563.0,
+        1141.0,
+        632.0
+      ],
+      "output_image": "submission/task02/plos02-055-box.png"
+    }
+  ],
+  "command": "env -u PYTHONPATH .venv/bin/python submission/task02/restore_boxes.py"
+}
