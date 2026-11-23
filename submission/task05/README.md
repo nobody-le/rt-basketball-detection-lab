@@ -44,10 +44,28 @@
 
 `059` 的标注为无球，模型也没有输出，二者一致，不需要复核。
 
+## 人工框与预测框对照
+
+每帧一张 `jackson-<帧号>-compare.jpg`：绿色为人工框，红色为预测框，页眉标出帧号、IoU 和匹配结论。`jackson-8-grid.jpg` 是 8 帧总览。
+
+| 帧 | 对照图 | IoU | 预测框 |
+|---:|---|---:|---|
+| 3 | `jackson-003-compare.jpg` | 0.0000 | 无 |
+| 11 | `jackson-011-compare.jpg` | 0.0000 | 无 |
+| 19 | `jackson-019-compare.jpg` | 0.0000 | 无 |
+| 27 | `jackson-027-compare.jpg` | 0.0000 | 无 |
+| 35 | `jackson-035-compare.jpg` | 0.0000 | 1 个，conf 0.2768，与标注无重叠 |
+| 43 | `jackson-043-compare.jpg` | 0.0000 | 无 |
+| 51 | `jackson-051-compare.jpg` | 0.0000 | 无 |
+| 59 | `jackson-059-compare.jpg` | —（无球） | 无 |
+
+`comparison-index.csv` 记录每帧的人工框、预测框坐标、置信度、IoU、匹配与复核标志。
+
 ## 复跑
 
 ```bash
 env -u PYTHONPATH .venv/bin/python submission/task05/run_test.py
+env -u PYTHONPATH .venv/bin/python submission/task05/draw_comparison.py
 ```
 
-输出：`jackson-test.jsonl`（逐帧完整检测）、`test-frames.csv`（上表）、`test-summary.json`（汇总与复核帧清单）、`grouping.csv`（来源分组）。
+输出：`jackson-test.jsonl`（逐帧完整检测）、`test-frames.csv`（上表）、`test-summary.json`（汇总与复核帧清单）、`grouping.csv`（来源分组）、`jackson-*-compare.jpg` / `jackson-8-grid.jpg` / `comparison-index.csv`（对照图与索引）。

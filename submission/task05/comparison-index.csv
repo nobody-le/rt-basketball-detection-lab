@@ -1,0 +1,9 @@
+frame,output,gt_xyxy,pred_boxes,pred_confidences,best_iou,matched,review,reason
+3,submission/task05/jackson-003-compare.jpg,584 785 694 887,,,0,False,True,miss
+11,submission/task05/jackson-011-compare.jpg,626 1139 720 1233,,,0,False,True,miss
+19,submission/task05/jackson-019-compare.jpg,605 875 707 969,,,0,False,True,miss
+27,submission/task05/jackson-027-compare.jpg,631 879 733 981,,,0,False,True,miss
+35,submission/task05/jackson-035-compare.jpg,694 811 805 896,35.918521881103516 1321.7108154296875 97.29623413085938 1394.7568359375,0.2768,0.0,False,True,unmatched_extra_box
+43,submission/task05/jackson-043-compare.jpg,648 495 767 597,,,0,False,True,miss
+51,submission/task05/jackson-051-compare.jpg,767 0 852 73,,,0,False,True,miss
+59,submission/task05/jackson-059-compare.jpg,,,,0,False,False,ok
