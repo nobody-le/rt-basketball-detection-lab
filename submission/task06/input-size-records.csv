@@ -1,0 +1,4 @@
+backend,input_name,input_shape,evidence,source_file
+PyTorch,images,1x3x416x416,forward pre-hook on rt-100/rt-150/rt-200,backend-comparison.json
+ONNX Runtime,images,1x3x416x416,onnxruntime InferenceSession.get_inputs(),onnx-shape.json
+ONNX graph,images,1x3x416x416,onnx.load graph.input,onnx-shape.json

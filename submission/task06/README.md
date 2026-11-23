@@ -78,6 +78,7 @@ submission/task06/
 ├── backend-comparison.json     # compare_onnx.py 原始输出
 ├── backend-comparison.log      # 运行日志
 ├── backend-table.csv           # 三张图逐项对照
+├── input-size-records.csv      # 两后端实际输入尺寸汇总
 ├── switch-decision.json        # 条件检查与结论
 ├── rt-{100,150,200}-backend-compare.png
 ├── draw_compare.py
