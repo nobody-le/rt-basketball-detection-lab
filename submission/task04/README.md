@@ -61,6 +61,7 @@ submission/task04/
 ├── freeze10/{results.csv, args.yaml}
 ├── eval/{full,freeze10}.{jsonl, summary.json}
 ├── eval-table.csv / eval-table.json
+├── comparison-table.csv
 ├── train_compare.py
 └── README.md
 ```

@@ -1,0 +1,3 @@
+config,weights,freeze,epochs,imgsz,conf,match_iou,regular_matched,regular_total,edge_matched,edge_total,false_alarm_frames,empty_total,ball_matched,ball_total
+full,runs/task04/full/weights/best.pt,,5,640,0.25,0.50,0,10,0,2,0,2,0,12
+freeze10,runs/task04/freeze10/weights/best.pt,10,5,640,0.25,0.50,0,10,0,2,0,2,0,12
