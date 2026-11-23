@@ -1,0 +1,33 @@
+$ cd /home/nobody-le/projects/rt-basketball-detection-lab
+$ env -u PYTHONPATH .venv/bin/python submission/task01/check_env.py
+
+== System ==
+host              : nobody
+platform          : Linux-6.18.58.1-microsoft-standard-WSL2-x86_64-with-glibc2.39
+python executable : /home/nobody-le/projects/rt-basketball-detection-lab/.venv/bin/python
+python prefix     : /home/nobody-le/projects/rt-basketball-detection-lab/.venv
+python version    : 3.12.3
+
+== Dependencies (course requirements) ==
+package         installed     required    status
+torch           2.6.0+cpu     2.6.0       OK
+torchvision     0.21.0+cpu    0.21.0      OK
+ultralytics     8.3.232       8.3.232     OK
+opencv-python   4.11.0.86     4.11.0.86   OK
+numpy           1.26.4        1.26.4      OK
+cv2 module      4.11.0                    /home/nobody-le/projects/rt-basketball-detection-lab/.venv/lib/python3.12/site-packages/cv2/__init__.py
+torch wheel     2.6.0+cpu     
+torchvision     0.21.0+cpu    
+ultralytics     8.3.232       
+
+== CPU-only PyTorch ==
+torch.__version__       : 2.6.0+cpu
+torch.version.cuda      : None
+torch.cuda.is_available : False
+torch.cuda.device_count : 0
+torch.backends.cudnn    : False
+matmul result device    : cpu  shape=(256, 256)  value=256
+torch.get_num_threads   : 16
+
+== Result ==
+PASS: 13/13 checks
