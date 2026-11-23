@@ -1,0 +1,9 @@
+frame,image,group,gt_xyxy,detections,top_confidence,best_iou,matched,review,reason
+3,jackson-003.jpg,small,584 785 694 887,0,,0,False,True,miss
+11,jackson-011.jpg,small,626 1139 720 1233,0,,0,False,True,miss
+19,jackson-019.jpg,small,605 875 707 969,0,,0,False,True,miss
+27,jackson-027.jpg,small,631 879 733 981,0,,0,False,True,miss
+35,jackson-035.jpg,small,694 811 805 896,1,0.2767553925514221,0.0,False,True,unmatched_extra_box
+43,jackson-043.jpg,small,648 495 767 597,0,,0,False,True,miss
+51,jackson-051.jpg,edge,767 0 852 73,0,,0,False,True,miss
+59,jackson-059.jpg,empty,,0,,0,False,False,ok

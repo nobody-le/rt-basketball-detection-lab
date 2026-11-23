@@ -1,0 +1,9 @@
+source,frames,correct_split,reported_wrong_split,note
+plos01,3,train,train,
+plos02,6,train,train,
+plos03,7,train,train,
+plos06,5,train,train,
+plos07,5,train,train,
+plos09,7,train,train,
+rt,14,val,train: 1; val: 13,rt-125 在 train
+jackson,8,test,val: 1; test: 7,jackson-011 在 val

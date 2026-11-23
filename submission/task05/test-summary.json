@@ -1,0 +1,29 @@
+{
+  "task": "task05",
+  "weights": "yolo11n.pt",
+  "device": "cpu",
+  "imgsz": 416,
+  "conf": 0.1,
+  "match_iou": 0.5,
+  "split": "test (Jackson only)",
+  "frames": 8,
+  "ball_frames": 7,
+  "matched": 0,
+  "missed": 7,
+  "empty_frames": 1,
+  "false_alarm_frames": 0,
+  "extra_boxes": 1,
+  "review_frames": [
+    3,
+    11,
+    19,
+    27,
+    35,
+    43,
+    51
+  ],
+  "ok_frames": [
+    59
+  ],
+  "command": "env -u PYTHONPATH .venv/bin/python submission/task05/run_test.py"
+}
