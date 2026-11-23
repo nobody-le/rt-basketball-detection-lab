@@ -38,7 +38,7 @@ env -u PYTHONPATH .venv/bin/python submission/task01/detect_rt100.py
 | 原图 | 360×640 |
 | 检测框 `xyxy` | `[139.41, 390.48, 260.47, 516.74]` |
 | 置信度 | 0.5129 |
-| 耗时 | 84.22 ms |
+| 耗时 | 约 74 ms（本次记录 74.19 ms） |
 
 - `rt-100.png`：带框结果图
 - `result.json`：完整运行记录（含权重校验值、依赖版本、复跑命令）
