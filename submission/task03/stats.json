@@ -1,0 +1,43 @@
+{
+  "task": "task03",
+  "weights": "yolo11n.pt",
+  "match_iou": 0.5,
+  "split": "val",
+  "frames": 14,
+  "configs": [
+    {
+      "id": "A",
+      "imgsz": 640,
+      "conf": 0.1,
+      "ball_matched": 4,
+      "ball_total": 12,
+      "edge_matched": 1,
+      "edge_total": 2,
+      "empty_false_alarm": 0,
+      "empty_total": 2
+    },
+    {
+      "id": "B",
+      "imgsz": 320,
+      "conf": 0.1,
+      "ball_matched": 3,
+      "ball_total": 12,
+      "edge_matched": 0,
+      "edge_total": 2,
+      "empty_false_alarm": 0,
+      "empty_total": 2
+    },
+    {
+      "id": "C",
+      "imgsz": 320,
+      "conf": 0.25,
+      "ball_matched": 2,
+      "ball_total": 12,
+      "edge_matched": 0,
+      "edge_total": 2,
+      "empty_false_alarm": 0,
+      "empty_total": 2
+    }
+  ],
+  "command": "env -u PYTHONPATH .venv/bin/python submission/task03/compare_settings.py"
+}

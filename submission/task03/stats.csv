@@ -1,0 +1,4 @@
+config,imgsz,conf,ball_matched,ball_total,edge_matched,edge_total,false_alarm,empty_total
+A,640,0.1,4,12,1,2,0,2
+B,320,0.1,3,12,0,2,0,2
+C,320,0.25,2,12,0,2,0,2
