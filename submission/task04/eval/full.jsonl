@@ -1,0 +1,14 @@
+{"source": "rt", "frame": 0, "time_s": 0.0, "width": 360, "height": 640, "group": "regular", "annotation_xyxy": [118, 229, 228, 340], "detections": [], "best_iou": 0, "matched": false, "elapsed_ms": 30.35}
+{"source": "rt", "frame": 25, "time_s": 0.4166, "width": 360, "height": 640, "group": "regular", "annotation_xyxy": [126, 255, 242, 371], "detections": [], "best_iou": 0, "matched": false, "elapsed_ms": 13.26}
+{"source": "rt", "frame": 50, "time_s": 0.8331, "width": 360, "height": 640, "group": "regular", "annotation_xyxy": [135, 333, 257, 452], "detections": [], "best_iou": 0, "matched": false, "elapsed_ms": 14.0}
+{"source": "rt", "frame": 75, "time_s": 1.2497, "width": 360, "height": 640, "group": "regular", "annotation_xyxy": [163, 441, 285, 566], "detections": [], "best_iou": 0, "matched": false, "elapsed_ms": 13.39}
+{"source": "rt", "frame": 100, "time_s": 1.6663, "width": 360, "height": 640, "group": "regular", "annotation_xyxy": [136, 395, 255, 515], "detections": [], "best_iou": 0, "matched": false, "elapsed_ms": 13.85}
+{"source": "rt", "frame": 125, "time_s": 2.0828, "width": 360, "height": 640, "group": "regular", "annotation_xyxy": [48, 303, 167, 425], "detections": [], "best_iou": 0, "matched": false, "elapsed_ms": 14.04}
+{"source": "rt", "frame": 145, "time_s": 2.4161, "width": 360, "height": 640, "group": "edge", "annotation_xyxy": [0, 255, 51, 360], "detections": [], "best_iou": 0, "matched": false, "elapsed_ms": 13.28}
+{"source": "rt", "frame": 150, "time_s": 2.4994, "width": 360, "height": 640, "group": "edge", "annotation_xyxy": [0, 247, 31, 344], "detections": [], "best_iou": 0, "matched": false, "elapsed_ms": 13.27}
+{"source": "rt", "frame": 180, "time_s": 2.9993, "width": 360, "height": 640, "group": "empty", "annotation_xyxy": [], "detections": [], "best_iou": 0, "matched": false, "elapsed_ms": 13.22}
+{"source": "rt", "frame": 200, "time_s": 3.3325, "width": 360, "height": 640, "group": "empty", "annotation_xyxy": [], "detections": [], "best_iou": 0, "matched": false, "elapsed_ms": 13.4}
+{"source": "rt", "frame": 225, "time_s": 3.7491, "width": 360, "height": 640, "group": "regular", "annotation_xyxy": [26, 156, 133, 265], "detections": [], "best_iou": 0, "matched": false, "elapsed_ms": 13.46}
+{"source": "rt", "frame": 250, "time_s": 4.1657, "width": 360, "height": 640, "group": "regular", "annotation_xyxy": [129, 213, 234, 316], "detections": [], "best_iou": 0, "matched": false, "elapsed_ms": 19.86}
+{"source": "rt", "frame": 275, "time_s": 4.5822, "width": 360, "height": 640, "group": "regular", "annotation_xyxy": [125, 267, 227, 370], "detections": [], "best_iou": 0, "matched": false, "elapsed_ms": 18.18}
+{"source": "rt", "frame": 300, "time_s": 4.9988, "width": 360, "height": 640, "group": "regular", "annotation_xyxy": [109, 276, 208, 378], "detections": [], "best_iou": 0, "matched": false, "elapsed_ms": 18.25}

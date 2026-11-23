@@ -1,0 +1,64 @@
+{
+  "task": "task04",
+  "pretrained": "yolo11n.pt",
+  "configs": [
+    {
+      "name": "full",
+      "label": "全量微调",
+      "freeze": null,
+      "epochs": 5,
+      "train_args": {
+        "data": "/home/nobody-le/projects/rt-basketball-detection-lab/data.yaml",
+        "epochs": 5,
+        "imgsz": 416,
+        "batch": 8,
+        "workers": 0,
+        "device": "cpu",
+        "seed": 42,
+        "deterministic": true,
+        "optimizer": "AdamW",
+        "lr0": 0.001,
+        "mosaic": 0.0,
+        "mixup": 0.0,
+        "scale": 0.2,
+        "plots": false,
+        "verbose": false
+      },
+      "weights": "runs/task04/full/weights/best.pt",
+      "total_params": 2624080,
+      "frozen_params": 0,
+      "trainable_params": 2624080,
+      "results_csv": "submission/task04/full/results.csv",
+      "args_yaml": "submission/task04/full/args.yaml"
+    },
+    {
+      "name": "freeze10",
+      "label": "冻结前 10 层",
+      "freeze": 10,
+      "epochs": 5,
+      "train_args": {
+        "data": "/home/nobody-le/projects/rt-basketball-detection-lab/data.yaml",
+        "epochs": 5,
+        "imgsz": 416,
+        "batch": 8,
+        "workers": 0,
+        "device": "cpu",
+        "seed": 42,
+        "deterministic": true,
+        "optimizer": "AdamW",
+        "lr0": 0.001,
+        "mosaic": 0.0,
+        "mixup": 0.0,
+        "scale": 0.2,
+        "plots": false,
+        "verbose": false
+      },
+      "weights": "runs/task04/freeze10/weights/best.pt",
+      "total_params": 2624080,
+      "frozen_params": 1115744,
+      "trainable_params": 1508336,
+      "results_csv": "submission/task04/freeze10/results.csv",
+      "args_yaml": "submission/task04/freeze10/args.yaml"
+    }
+  ]
+}

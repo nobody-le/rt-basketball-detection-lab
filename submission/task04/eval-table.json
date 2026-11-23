@@ -1,0 +1,37 @@
+{
+  "common": {
+    "imgsz": 640,
+    "conf": 0.25,
+    "match_iou": 0.5
+  },
+  "rows": [
+    {
+      "config": "full",
+      "freeze": null,
+      "epochs": 5,
+      "ball_matched": 0,
+      "ball_total": 12,
+      "edge_matched": 0,
+      "edge_total": 2,
+      "false_alarm": 0,
+      "empty_total": 2,
+      "imgsz": 640,
+      "conf": 0.25,
+      "match_iou": 0.5
+    },
+    {
+      "config": "freeze10",
+      "freeze": 10,
+      "epochs": 5,
+      "ball_matched": 0,
+      "ball_total": 12,
+      "edge_matched": 0,
+      "edge_total": 2,
+      "false_alarm": 0,
+      "empty_total": 2,
+      "imgsz": 640,
+      "conf": 0.25,
+      "match_iou": 0.5
+    }
+  ]
+}
