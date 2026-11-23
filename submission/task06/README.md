@@ -49,6 +49,12 @@ env -u PYTHONPATH .venv/bin/python -c "from ultralytics import YOLO; YOLO('yolo1
 
 明细见 `backend-table.csv` 与 `backend-comparison.json`。
 
+逐图对照图：左边 PyTorch、右边 ONNX Runtime，页眉保留帧号、类别、置信度或空结果。
+
+- `rt-100-backend-compare.png`
+- `rt-150-backend-compare.png`
+- `rt-200-backend-compare.png`
+
 ## 切换判断
 
 | 条件 | 结果 |
@@ -73,6 +79,8 @@ submission/task06/
 ├── backend-comparison.log      # 运行日志
 ├── backend-table.csv           # 三张图逐项对照
 ├── switch-decision.json        # 条件检查与结论
+├── rt-{100,150,200}-backend-compare.png
+├── draw_compare.py
 ├── summarize.py
 └── README.md
 ```
@@ -86,4 +94,7 @@ env -u PYTHONPATH .venv/bin/python compare_onnx.py --onnx ./yolo11n.onnx --outpu
 
 # 3) 汇总与切换条件
 env -u PYTHONPATH .venv/bin/python submission/task06/summarize.py
+
+# 4) 生成三张逐图对照图
+env -u PYTHONPATH .venv/bin/python submission/task06/draw_compare.py
 ```
