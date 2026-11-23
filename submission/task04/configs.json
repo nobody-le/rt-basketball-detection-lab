@@ -26,8 +26,8 @@
       },
       "weights": "runs/task04/full/weights/best.pt",
       "total_params": 2624080,
-      "frozen_params": 0,
-      "trainable_params": 2624080,
+      "frozen_params": 16,
+      "trainable_params": 2624064,
       "results_csv": "submission/task04/full/results.csv",
       "args_yaml": "submission/task04/full/args.yaml"
     },
@@ -55,8 +55,8 @@
       },
       "weights": "runs/task04/freeze10/weights/best.pt",
       "total_params": 2624080,
-      "frozen_params": 1115744,
-      "trainable_params": 1508336,
+      "frozen_params": 1115760,
+      "trainable_params": 1508320,
       "results_csv": "submission/task04/freeze10/results.csv",
       "args_yaml": "submission/task04/freeze10/args.yaml"
     }

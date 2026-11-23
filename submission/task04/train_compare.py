@@ -53,10 +53,14 @@ CONFIGS = (
 
 
 def parameter_counts(model, freeze):
-    """Count total, frozen, and trainable parameters for whole-model or layer-0..N-1 freezing."""
+    """Count total, frozen, and trainable parameters for layer-0..N-1 freezing.
+
+    Ultralytics always freezes the DFL convolution (16 parameters), even with no freeze.
+    """
     layers = list(model.model.model)
     total = sum(p.numel() for p in model.model.parameters())
-    frozen = sum(p.numel() for layer in layers[:freeze] for p in layer.parameters()) if freeze else 0
+    dfl = sum(p.numel() for name, p in model.model.named_parameters() if ".dfl" in name)
+    frozen = dfl + (sum(p.numel() for layer in layers[:freeze] for p in layer.parameters()) if freeze else 0)
     return total, frozen, total - frozen
 
 
