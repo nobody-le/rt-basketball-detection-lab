@@ -1,0 +1,4 @@
+frame,pytorch_count,pytorch_box,pytorch_class,pytorch_conf,onnx_count,onnx_box,onnx_class,onnx_conf,max_coord_delta,max_conf_delta,boxes_match,classes_match,confidence_match,empty_match
+100,1,140.1268 391.1578 260.0394 516.3745,sports ball,0.63895839,1,140.1268 391.1577 260.0394 516.3745,sports ball,0.63895845,0.00006104,0.0000000596,True,True,True,True
+150,0,,,,0,,,,0.00000000,0.0000000000,True,True,True,True
+200,0,,,,0,,,,0.00000000,0.0000000000,True,True,True,True

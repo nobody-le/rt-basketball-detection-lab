@@ -1,0 +1,72 @@
+{
+  "pytorch_weights": "yolo11n.pt",
+  "onnx_weights": "yolo11n.onnx",
+  "imgsz": 416,
+  "conf": 0.1,
+  "rect": false,
+  "pytorch_input_shapes": [
+    [
+      1,
+      3,
+      416,
+      416
+    ],
+    [
+      1,
+      3,
+      416,
+      416
+    ],
+    [
+      1,
+      3,
+      416,
+      416
+    ]
+  ],
+  "onnx_input_shape": [
+    1,
+    3,
+    416,
+    416
+  ],
+  "frames": [
+    {
+      "frame": 100,
+      "pytorch": [
+        {
+          "bbox_xyxy": [
+            140.12681579589844,
+            391.1578063964844,
+            260.0393981933594,
+            516.3744506835938
+          ],
+          "class": "sports ball",
+          "confidence": 0.6389583945274353
+        }
+      ],
+      "onnxruntime": [
+        {
+          "bbox_xyxy": [
+            140.12681579589844,
+            391.1577453613281,
+            260.0393981933594,
+            516.3744506835938
+          ],
+          "class": "sports ball",
+          "confidence": 0.6389584541320801
+        }
+      ]
+    },
+    {
+      "frame": 150,
+      "pytorch": [],
+      "onnxruntime": []
+    },
+    {
+      "frame": 200,
+      "pytorch": [],
+      "onnxruntime": []
+    }
+  ]
+}

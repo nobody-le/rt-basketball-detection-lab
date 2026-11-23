@@ -1,0 +1,42 @@
+{
+  "model": "yolo11n.onnx",
+  "opset": 19,
+  "ir_version": 9,
+  "graph_inputs": [
+    {
+      "name": "images",
+      "shape": [
+        1,
+        3,
+        416,
+        416
+      ],
+      "dtype": 1
+    }
+  ],
+  "graph_outputs": [
+    {
+      "name": "output0",
+      "shape": [
+        1,
+        84,
+        3549
+      ]
+    }
+  ],
+  "onnxruntime_inputs": [
+    {
+      "name": "images",
+      "shape": [
+        1,
+        3,
+        416,
+        416
+      ],
+      "type": "tensor(float)"
+    }
+  ],
+  "providers": [
+    "CPUExecutionProvider"
+  ]
+}
