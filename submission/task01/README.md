@@ -43,6 +43,26 @@ env -u PYTHONPATH .venv/bin/python submission/task01/detect_rt100.py
 - `rt-100.png`：带框结果图
 - `result.json`：完整运行记录（含权重校验值、依赖版本、复跑命令）
 
+## 3. rt-225 与其左右翻转图的中心点对照
+
+对 `rt-225.jpg` 做首次推理（阈值 0.25），再由该图左右翻转生成 `rt-225-flip.png` 并以阈值 0.10 推理。两者都取最高分框的中心，坐标为该图像素坐标。
+
+```bash
+env -u PYTHONPATH .venv/bin/python submission/task01/compare_flip.py
+```
+
+| 输入 | 阈值 | 最高分 | 中心 `(x, y)` |
+|---|---:|---:|---|
+| `rt-225.jpg` | 0.25 | 0.2513 | (78.7, 210.8) |
+| `rt-225-flip.png` | 0.10 | 0.2809 | (281.9, 211.3) |
+
+镜像校验：宽 360，期望翻转后 `x = 360 − 78.7 = 281.3`，实测 `281.9`，`Δx = +0.6`，`Δy = +0.5`。
+
+- `rt-225.jpg`：仓库生成的验证原图
+- `rt-225-flip.png`：由原图左右翻转得到的 PNG
+- `rt-225-centers.json`：中心点、框、置信度和复跑命令
+- `rt-225-compare.png`：左右中心点对照图
+
 ## 前置条件
 
 `dataset-curated/` 与 `yolo11n.pt` 被 `.gitignore` 忽略，复跑前在仓库根目录执行一次：

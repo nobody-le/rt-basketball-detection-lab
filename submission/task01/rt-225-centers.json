@@ -1,0 +1,63 @@
+{
+  "task": "task01",
+  "check": "rt-225 horizontal flip center comparison",
+  "source": {
+    "image": "submission/task01/rt-225.jpg",
+    "sha256": "89395b3fededa39c042238b8d38c3087e77adc3e52177dfcedfa0be3baccad86",
+    "size": {
+      "width": 360,
+      "height": 640
+    }
+  },
+  "device": "cpu",
+  "imgsz": 640,
+  "classes": [
+    "sports ball"
+  ],
+  "original": {
+    "conf": 0.25,
+    "detections": [
+      {
+        "bbox_xyxy": [
+          24.39,
+          156.21,
+          133.0,
+          265.45
+        ],
+        "class": "sports ball",
+        "confidence": 0.2513
+      }
+    ],
+    "center_xy": {
+      "x": 78.7,
+      "y": 210.8
+    }
+  },
+  "flipped": {
+    "image": "submission/task01/rt-225-flip.png",
+    "conf": 0.1,
+    "detections": [
+      {
+        "bbox_xyxy": [
+          227.55,
+          156.48,
+          336.28,
+          266.08
+        ],
+        "class": "sports ball",
+        "confidence": 0.2809
+      }
+    ],
+    "center_xy": {
+      "x": 281.9,
+      "y": 211.3
+    }
+  },
+  "mirror": {
+    "expected_flipped_x": 281.3,
+    "dx": 0.6,
+    "dy": 0.5
+  },
+  "compare_image": "submission/task01/rt-225-compare.png",
+  "command": "env -u PYTHONPATH .venv/bin/python submission/task01/compare_flip.py"
+}
