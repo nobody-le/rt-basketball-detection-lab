@@ -58,6 +58,14 @@
     "dx": 0.6,
     "dy": 0.5
   },
+  "confidence_compare": {
+    "original_conf": 0.2513,
+    "flipped_conf": 0.2809,
+    "equal": false,
+    "delta_flipped_minus_original": 0.0296,
+    "original_at_flip_threshold_conf": 0.2513,
+    "threshold_note": "Confidence is the raw top-box score; the 0.25/0.10 thresholds only filter detections."
+  },
   "compare_image": "submission/task01/rt-225-compare.png",
   "command": "env -u PYTHONPATH .venv/bin/python submission/task01/compare_flip.py"
 }

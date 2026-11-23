@@ -60,6 +60,7 @@ flipped_image = cv2.flip(image, 1)
 if not cv2.imwrite(str(FLIPPED), flipped_image):
     raise SystemExit(f"无法写入 {FLIPPED}")
 flipped_detections, flipped_top, flipped_center = run(flipped_image, FLIP_CONF)
+_, original_top_at_flip_conf, _ = run(image, FLIP_CONF)
 
 mirror = None
 if original_center and flipped_center:
@@ -68,6 +69,22 @@ if original_center and flipped_center:
         "dx": round(flipped_center["x"] - (width - original_center["x"]), 1),
         "dy": round(flipped_center["y"] - original_center["y"], 1),
     }
+
+original_conf = original_top["confidence"] if original_top else None
+flipped_conf = flipped_top["confidence"] if flipped_top else None
+confidence_compare = {
+    "original_conf": original_conf,
+    "flipped_conf": flipped_conf,
+    "equal": original_conf == flipped_conf if original_conf is not None and flipped_conf is not None else None,
+    "delta_flipped_minus_original": (
+        round(flipped_conf - original_conf, 4)
+        if original_conf is not None and flipped_conf is not None else None
+    ),
+    "original_at_flip_threshold_conf": (
+        original_top_at_flip_conf["confidence"] if original_top_at_flip_conf else None
+    ),
+    "threshold_note": "Confidence is the raw top-box score; the 0.25/0.10 thresholds only filter detections.",
+}
 
 
 def annotate(frame, top, center, conf, title):
@@ -120,6 +137,7 @@ record = {
         "center_xy": flipped_center,
     },
     "mirror": mirror,
+    "confidence_compare": confidence_compare,
     "compare_image": str(COMPARE.relative_to(ROOT)),
     "command": COMMAND,
 }
