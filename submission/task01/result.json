@@ -1,5 +1,5 @@
 {
-  "task": "task02",
+  "task": "task01",
   "image": "dataset-curated/images/val/rt-100.jpg",
   "image_size": {
     "width": 360,
@@ -26,13 +26,13 @@
       "confidence": 0.5129
     }
   ],
-  "elapsed_ms": 84.22,
+  "elapsed_ms": 74.19,
   "environment": {
     "python": "3.12.3",
     "torch": "2.6.0+cpu",
     "ultralytics": "8.3.232",
     "opencv": "4.11.0"
   },
-  "result_image": "submission/task02/rt-100.png",
-  "command": "env -u PYTHONPATH .venv/bin/python submission/task02/detect_rt100.py"
+  "result_image": "submission/task01/rt-100.png",
+  "command": "env -u PYTHONPATH .venv/bin/python submission/task01/detect_rt100.py"
 }

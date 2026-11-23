@@ -1,4 +1,4 @@
-"""Task 02: run yolo11n on frame rt-100 and save the boxed result."""
+"""Task 01: run yolo11n on frame rt-100 and save the boxed result."""
 
 from __future__ import annotations
 
@@ -19,7 +19,7 @@ IMAGE = ROOT / "dataset-curated" / "images" / "val" / "rt-100.jpg"
 WEIGHTS = ROOT / "yolo11n.pt"
 IMGSZ = 640
 CONF = 0.25
-COMMAND = "env -u PYTHONPATH .venv/bin/python submission/task02/detect_rt100.py"
+COMMAND = "env -u PYTHONPATH .venv/bin/python submission/task01/detect_rt100.py"
 
 if not IMAGE.is_file():
     raise SystemExit(f"缺少 {IMAGE.relative_to(ROOT)}，先在仓库根目录运行 python lab.py prepare")
@@ -66,7 +66,7 @@ if not cv2.imwrite(str(png), annotated):
     raise SystemExit(f"无法写入 {png}")
 
 record = {
-    "task": "task02",
+    "task": "task01",
     "image": str(IMAGE.relative_to(ROOT)),
     "image_size": {"width": image.shape[1], "height": image.shape[0]},
     "weights": WEIGHTS.name,
