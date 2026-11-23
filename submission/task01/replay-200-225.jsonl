@@ -1,0 +1,2 @@
+{"frame": 200, "time_s": 3.3325, "width": 360, "height": 640, "imgsz": 640, "conf": 0.1, "classes": ["sports ball"], "detections": [], "center_xy": null}
+{"frame": 225, "time_s": 3.7491, "width": 360, "height": 640, "imgsz": 640, "conf": 0.1, "classes": ["sports ball"], "detections": [{"bbox_xyxy": [24.64, 156.35, 132.91, 265.46], "class": "sports ball", "confidence": 0.1937}], "center_xy": {"x": 78.8, "y": 210.9}}

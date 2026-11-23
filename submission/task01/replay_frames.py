@@ -1,4 +1,4 @@
-"""Task 01: replay rt.mp4 frames 200 and 250 and save their detections."""
+"""Task 01: replay rt.mp4 frames 200 and 225 and save their detections."""
 
 from __future__ import annotations
 
@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[2]
 OUT = Path(__file__).resolve().parent
 VIDEO = ROOT / "data-src" / "rt.mp4"
 WEIGHTS = ROOT / "yolo11n.pt"
-FRAMES = (200, 250)
+FRAMES = (200, 225)
 IMGSZ = 640
 CONF = 0.10
 COMMAND = "env -u PYTHONPATH .venv/bin/python submission/task01/replay_frames.py"
@@ -76,7 +76,7 @@ for number in FRAMES:
         "center_xy": center,
     })
 
-jsonl = OUT / "replay-200-250.jsonl"
+jsonl = OUT / "replay-200-225.jsonl"
 jsonl.write_text(
     "".join(json.dumps(record, ensure_ascii=False) + "\n" for record in records),
     encoding="utf-8",
@@ -84,7 +84,7 @@ jsonl.write_text(
 
 fields = ["frame", "time_s", "width", "height", "detections", "top_confidence",
           "bbox_xyxy", "center_x", "center_y"]
-with (OUT / "replay-200-250.csv").open("w", encoding="utf-8", newline="") as stream:
+with (OUT / "replay-200-225.csv").open("w", encoding="utf-8", newline="") as stream:
     writer = csv.DictWriter(stream, fieldnames=fields)
     writer.writeheader()
     for record in records:
@@ -126,8 +126,8 @@ def annotate(frame, record):
 
 
 composite = np.hstack([annotate(frames[number], record) for number, record in zip(FRAMES, records)])
-if not cv2.imwrite(str(OUT / "replay-200-250.png"), composite):
-    raise SystemExit("无法写入 replay-200-250.png")
+if not cv2.imwrite(str(OUT / "replay-200-225.png"), composite):
+    raise SystemExit("无法写入 replay-200-225.png")
 
 for record in records:
     print(json.dumps(record, ensure_ascii=False))

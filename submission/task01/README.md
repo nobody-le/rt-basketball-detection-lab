@@ -63,9 +63,9 @@ env -u PYTHONPATH .venv/bin/python submission/task01/compare_flip.py
 - `rt-225-centers.json`：中心点、框、置信度和复跑命令
 - `rt-225-compare.png`：左右中心点对照图
 
-## 4. rt.mp4 第 200、250 帧回放
+## 4. rt.mp4 第 200、225 帧回放
 
-从 `data-src/rt.mp4` 顺序解码到第 200、250 帧，按 640 输入、阈值 0.10、仅 `sports ball` 推理；检测为空时保留该帧记录。
+从 `data-src/rt.mp4` 顺序解码到第 200、225 帧，按 640 输入、阈值 0.10、仅 `sports ball` 推理；检测为空时保留该帧记录。
 
 ```bash
 env -u PYTHONPATH .venv/bin/python submission/task01/replay_frames.py
@@ -74,13 +74,13 @@ env -u PYTHONPATH .venv/bin/python submission/task01/replay_frames.py
 | 帧 | 时间 (s) | 检测数 | 最高分 | 框 `xyxy` | 中心 `(x, y)` |
 |---:|---:|---:|---:|---|---|
 | 200 | 3.3325 | 0 | — | — | — |
-| 250 | 4.1657 | 0 | — | — | — |
+| 225 | 3.7491 | 1 | 0.1937 | `[24.64, 156.35, 132.91, 265.46]` | (78.8, 210.9) |
 
-人工标注对照：第 200 帧无球（空标注）；第 250 帧有球，标注框 `[129, 213, 234, 316]`，但本轮模型在 0.10 阈值下未检出，降到 0.01 仍为空。
+人工标注对照：第 200 帧无球（空标注）；第 225 帧标注框 `[26, 156, 133, 265]`，中心 (79.5, 210.5)，与模型中心基本重合。
 
-- `replay-200-250.jsonl`：逐帧记录（帧号、时间、检测列表、中心点）
-- `replay-200-250.csv`：表格版
-- `replay-200-250.png`：两帧并列截图
+- `replay-200-225.jsonl`：逐帧记录（帧号、时间、检测列表、中心点）
+- `replay-200-225.csv`：表格版
+- `replay-200-225.png`：两帧并列截图
 
 ## 前置条件
 
