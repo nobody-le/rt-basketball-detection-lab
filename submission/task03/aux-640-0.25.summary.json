@@ -1,0 +1,30 @@
+{
+  "weights": "/home/nobody-le/projects/rt-basketball-detection-lab/yolo11n.pt",
+  "imgsz": 640,
+  "conf": 0.25,
+  "split": "val",
+  "match_iou": 0.5,
+  "groups": {
+    "regular": {
+      "frames": 10,
+      "hits": 3,
+      "misses": 7,
+      "false_alarm_frames": 0,
+      "extra_boxes": 0
+    },
+    "edge": {
+      "frames": 2,
+      "hits": 0,
+      "misses": 2,
+      "false_alarm_frames": 0,
+      "extra_boxes": 0
+    },
+    "empty": {
+      "frames": 2,
+      "hits": 0,
+      "misses": 0,
+      "false_alarm_frames": 0,
+      "extra_boxes": 0
+    }
+  }
+}
