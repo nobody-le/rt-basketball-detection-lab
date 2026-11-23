@@ -1,0 +1,38 @@
+{
+  "task": "task02",
+  "image": "dataset-curated/images/val/rt-100.jpg",
+  "image_size": {
+    "width": 360,
+    "height": 640
+  },
+  "weights": "yolo11n.pt",
+  "weights_sha256": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1",
+  "device": "cpu",
+  "imgsz": 640,
+  "conf": 0.25,
+  "classes": [
+    "sports ball"
+  ],
+  "detections": [
+    {
+      "bbox_xyxy": [
+        139.41,
+        390.48,
+        260.47,
+        516.74
+      ],
+      "class": "sports ball",
+      "class_id": 32,
+      "confidence": 0.5129
+    }
+  ],
+  "elapsed_ms": 84.22,
+  "environment": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cpu",
+    "ultralytics": "8.3.232",
+    "opencv": "4.11.0"
+  },
+  "result_image": "submission/task02/rt-100.png",
+  "command": "env -u PYTHONPATH .venv/bin/python submission/task02/detect_rt100.py"
+}
