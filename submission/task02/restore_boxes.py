@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import json
+import zipfile
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 import cv2
@@ -10,8 +12,23 @@ import cv2
 ROOT = Path(__file__).resolve().parents[2]
 OUT = Path(__file__).resolve().parent
 DATASET = OUT / "yolo"
+SOURCE_EXPORT = OUT / "CVAT_2.zip"
+SOURCE_FORMAT = "CVAT for images 1.1"
 NAMES = ("rt-150", "plos02-055")
 COMMAND = "env -u PYTHONPATH .venv/bin/python submission/task02/restore_boxes.py"
+
+if not SOURCE_EXPORT.is_file():
+    raise SystemExit(f"缺少 {SOURCE_EXPORT}")
+with zipfile.ZipFile(SOURCE_EXPORT) as archive:
+    annotations = ET.fromstring(archive.read("annotations.xml"))
+source_dumped = annotations.findtext("meta/dumped")
+source_boxes = {
+    node.get("name"): [
+        [float(box.get(key)) for key in ("xtl", "ytl", "xbr", "ybr")]
+        for box in node.findall("box")
+    ]
+    for node in annotations.findall("image")
+}
 
 records = []
 for stem in NAMES:
@@ -35,6 +52,12 @@ for stem in NAMES:
     x2 = (cx + bw / 2) * width
     y2 = (cy + bh / 2) * height
     pixel_box = [round(x1, 2) + 0.0, round(y1, 2) + 0.0, round(x2, 2) + 0.0, round(y2, 2) + 0.0]
+    cvat_boxes = source_boxes.get(image_path.name, [])
+    if len(cvat_boxes) != 1:
+        raise SystemExit(f"CVAT_2 中 {image_path.name} 期望 1 个框，实际 {len(cvat_boxes)}")
+    cvat_box = cvat_boxes[0]
+    if any(abs(a - b) > 0.01 for a, b in zip(cvat_box, pixel_box)):
+        raise SystemExit(f"{image_path.name} 的 YOLO 框 {pixel_box} 与 CVAT_2 框 {cvat_box} 不一致")
 
     annotated = image.copy()
     p1 = (int(round(x1)), int(round(y1)))
@@ -58,6 +81,8 @@ for stem in NAMES:
         "size": {"width": width, "height": height},
         "label_file": str(label_path.relative_to(ROOT)),
         "yolo_line": " ".join(lines[0]),
+        "source_export": str(SOURCE_EXPORT.relative_to(ROOT)),
+        "source_box_xyxy": cvat_box,
         "class_id": class_id,
         "class_name": "basketball",
         "normalized_cxcywh": [cx, cy, bw, bh],
@@ -69,6 +94,9 @@ result = {
     "task": "task02",
     "format": "Ultralytics YOLO Detection 1.0",
     "export": "submission/task02/cvat-export.zip",
+    "source_export": str(SOURCE_EXPORT.relative_to(ROOT)),
+    "source_format": SOURCE_FORMAT,
+    "source_dumped": source_dumped,
     "restored": records,
     "command": COMMAND,
 }

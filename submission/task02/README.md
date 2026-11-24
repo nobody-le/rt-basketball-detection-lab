@@ -23,7 +23,7 @@
 
 ## 提交的导出
 
-- `CVAT.zip`：人工标注后在 CVAT 中直接导出的原始包（`save_images=false`，仅标签）
+- `CVAT_2.zip`：人工标注后的 `CVAT for images 1.1` 导出（含 `annotations.xml` 与 4 张图像），用于逐框核对
 - `cvat-export.zip`：按同一任务标注重新导出（`save_images=true`，含图像），作为本任务提交包
 - `yolo/`：`cvat-export.zip` 解包后的内容
 
@@ -43,7 +43,7 @@ yolo/
 env -u PYTHONPATH .venv/bin/python submission/task02/restore_boxes.py
 ```
 
-脚本读取 `yolo/labels/train/*.txt` 的归一化 `cx cy w h`，按原图宽高换算回像素：
+脚本读取 `yolo/labels/train/*.txt` 的归一化 `cx cy w h`，按原图宽高换算回像素；同时读取 `CVAT_2.zip` 的 `annotations.xml` 逐框核对，本次两帧的 CVAT 框与 YOLO 标签换算结果一致：
 
 | 图像 | 尺寸 | 归一化 `cx cy w h` | 还原像素框 `xyxy` |
 |---|---|---|---|
