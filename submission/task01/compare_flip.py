@@ -17,8 +17,7 @@ FLIPPED = OUT / "rt-225-flip.png"
 COMPARE = OUT / "rt-225-compare.png"
 WEIGHTS = ROOT / "yolo11n.pt"
 IMGSZ = 640
-FIRST_CONF = 0.25
-FLIP_CONF = 0.10
+CONF = 0.10
 COMMAND = "env -u PYTHONPATH .venv/bin/python submission/task01/compare_flip.py"
 
 for path in (SOURCE, WEIGHTS):
@@ -55,12 +54,11 @@ def run(frame, conf):
     return detections, top, center
 
 
-original_detections, original_top, original_center = run(image, FIRST_CONF)
+original_detections, original_top, original_center = run(image, CONF)
 flipped_image = cv2.flip(image, 1)
 if not cv2.imwrite(str(FLIPPED), flipped_image):
     raise SystemExit(f"无法写入 {FLIPPED}")
-flipped_detections, flipped_top, flipped_center = run(flipped_image, FLIP_CONF)
-_, original_top_at_flip_conf, _ = run(image, FLIP_CONF)
+flipped_detections, flipped_top, flipped_center = run(flipped_image, CONF)
 
 mirror = None
 if original_center and flipped_center:
@@ -80,10 +78,7 @@ confidence_compare = {
         round(flipped_conf - original_conf, 4)
         if original_conf is not None and flipped_conf is not None else None
     ),
-    "original_at_flip_threshold_conf": (
-        original_top_at_flip_conf["confidence"] if original_top_at_flip_conf else None
-    ),
-    "threshold_note": "Confidence is the raw top-box score; the 0.25/0.10 thresholds only filter detections.",
+    "threshold_note": "Confidence is the raw top-box score; both runs use the 0.10 threshold.",
 }
 
 
@@ -109,8 +104,8 @@ def annotate(frame, top, center, conf, title):
     return out
 
 
-left = annotate(image, original_top, original_center, FIRST_CONF, "rt-225.jpg")
-right = annotate(flipped_image, flipped_top, flipped_center, FLIP_CONF, "rt-225-flip.png")
+left = annotate(image, original_top, original_center, CONF, "rt-225.jpg")
+right = annotate(flipped_image, flipped_top, flipped_center, CONF, "rt-225-flip.png")
 if not cv2.imwrite(str(COMPARE), np.hstack([left, right])):
     raise SystemExit(f"无法写入 {COMPARE}")
 
@@ -126,13 +121,13 @@ record = {
     "imgsz": IMGSZ,
     "classes": ["sports ball"],
     "original": {
-        "conf": FIRST_CONF,
+        "conf": CONF,
         "detections": original_detections,
         "center_xy": original_center,
     },
     "flipped": {
         "image": str(FLIPPED.relative_to(ROOT)),
-        "conf": FLIP_CONF,
+        "conf": CONF,
         "detections": flipped_detections,
         "center_xy": flipped_center,
     },
