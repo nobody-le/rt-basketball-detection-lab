@@ -34,7 +34,7 @@ for stem in NAMES:
     y1 = (cy - bh / 2) * height
     x2 = (cx + bw / 2) * width
     y2 = (cy + bh / 2) * height
-    pixel_box = [round(x1, 2), round(y1, 2), round(x2, 2), round(y2, 2)]
+    pixel_box = [round(x1, 2) + 0.0, round(y1, 2) + 0.0, round(x2, 2) + 0.0, round(y2, 2) + 0.0]
 
     annotated = image.copy()
     p1 = (int(round(x1)), int(round(y1)))

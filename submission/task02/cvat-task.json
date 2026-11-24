@@ -23,9 +23,9 @@
     ]
   },
   "annotations": [
-    { "frame": 0, "file": "plos02-055.jpg", "type": "rectangle", "bbox_xyxy": [1072, 563, 1141, 632] },
-    { "frame": 1, "file": "rt-125.jpg", "type": "rectangle", "bbox_xyxy": [48, 303, 167, 425] },
-    { "frame": 2, "file": "rt-150.jpg", "type": "rectangle", "bbox_xyxy": [0, 247, 31, 344] },
+    { "frame": 0, "file": "plos02-055.jpg", "type": "rectangle", "bbox_xyxy": [1086.518, 575.703, 1155.518, 644.703] },
+    { "frame": 1, "file": "rt-125.jpg", "type": "rectangle", "bbox_xyxy": [45.664, 303.0, 164.664, 425.0] },
+    { "frame": 2, "file": "rt-150.jpg", "type": "rectangle", "bbox_xyxy": [0.0, 241.601, 35.7, 348.7] },
     { "frame": 3, "file": "rt-200.jpg", "type": "rectangle", "bbox_xyxy": null, "note": "无球，保持空标注" }
   ],
   "export": {

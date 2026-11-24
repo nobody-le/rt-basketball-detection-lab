@@ -10,20 +10,20 @@
         "height": 640
       },
       "label_file": "submission/task02/yolo/labels/train/rt-150.txt",
-      "yolo_line": "0 0.043056 0.461719 0.086111 0.151562",
+      "yolo_line": "0 0.049583 0.461172 0.099167 0.167344",
       "class_id": 0,
       "class_name": "basketball",
       "normalized_cxcywh": [
-        0.043056,
-        0.461719,
-        0.086111,
-        0.151562
+        0.049583,
+        0.461172,
+        0.099167,
+        0.167344
       ],
       "pixel_xyxy": [
         0.0,
-        247.0,
-        31.0,
-        344.0
+        241.6,
+        35.7,
+        348.7
       ],
       "output_image": "submission/task02/rt-150-box.png"
     },
@@ -34,20 +34,20 @@
         "height": 1080
       },
       "label_file": "submission/task02/yolo/labels/train/plos02-055.txt",
-      "yolo_line": "0 0.576302 0.553241 0.035937 0.063889",
+      "yolo_line": "0 0.583865 0.565000 0.035937 0.063889",
       "class_id": 0,
       "class_name": "basketball",
       "normalized_cxcywh": [
-        0.576302,
-        0.553241,
+        0.583865,
+        0.565,
         0.035937,
         0.063889
       ],
       "pixel_xyxy": [
-        1072.0,
-        563.0,
-        1141.0,
-        632.0
+        1086.52,
+        575.7,
+        1155.52,
+        644.7
       ],
       "output_image": "submission/task02/plos02-055-box.png"
     }
